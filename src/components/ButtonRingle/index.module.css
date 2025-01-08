@@ -1,0 +1,13 @@
+.button {
+  background-color: rgb(54, 70, 78, 0.5);
+  position: absolute;
+  top: 8px;
+  width: 70px;
+  height: 65px;
+  z-index: 1;
+  border-radius: 50% / 50%;
+}
+
+.buttonActive {
+  background-color: rgb(88, 204, 2, 0.5);
+}
