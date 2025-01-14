@@ -18,7 +18,7 @@ const GameHomePage = () => {
             />
           </div>
         </div>
-        <div className="relative flex gap-10">
+        <div className="relative flex flex-col gap-10 lg:flex-row">
           <div className="flex-1">
             <div className="flex items-center mx-auto mb-5">
               <div className="flex items-center w-full gap-1">
@@ -62,7 +62,7 @@ const GameHomePage = () => {
           </div>
           <div className="relative">
             <div className="sticky top-[56px] z-[999]">
-              <div className="border-[2px] w-[350px] border-[rgb(82,101,109)] px-4 py-3 rounded-[12px]">
+              <div className="border-[2px] w-full lg:w-[350px] border-[rgb(82,101,109)] px-4 py-3 rounded-[12px]">
                 <p className="font-bold text-white">Daily tasks</p>
                 <div className="flex items-center gap-2 mt-8">
                   <img
@@ -77,7 +77,7 @@ const GameHomePage = () => {
                   </div>
                 </div>
               </div>
-              <div className="border-[2px] w-[350px] border-[rgb(82,101,109)] px-4 py-3 rounded-[12px] mt-5">
+              <div className="border-[2px] w-full lg:w-[350px] border-[rgb(82,101,109)] px-4 py-3 rounded-[12px] mt-5">
                 <p className="font-bold text-white">Unlock Leaderboards!</p>
                 <div className="flex items-center gap-2 mt-8">
                   <img

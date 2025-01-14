@@ -31,7 +31,7 @@ const ListLevel = ({ invert = false, logoUrl }) => {
 
   return (
     <div className="max-w-[530px] w-full mx-auto relative">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5 py-5 overflow-hidden">
         <div className="flex justify-center gap-4">
           <ButtonRingle className="" active onClick={() => setIsShowing(true)}>
             <StarIcon />
@@ -83,7 +83,7 @@ const ListLevel = ({ invert = false, logoUrl }) => {
       </div>
       <Modal isShowing={isShowing} containerClassName="!bg-[#142025]">
         <div className="flex flex-col w-full h-full pt-10 mx-auto">
-          <div className="flex items-center gap-4 max-w-[1000px] mx-auto w-full ">
+          <div className="flex items-center gap-4 max-w-[1000px] px-4 mx-auto w-full ">
             <button onClick={() => setIsShowing(false)}>
               <FaTimes color="#fff" size={28} />
             </button>
@@ -95,7 +95,7 @@ const ListLevel = ({ invert = false, logoUrl }) => {
               </div>
             </div>
           </div>
-          <div className="flex-1 h-full max-w-[1000px] mx-auto w-full py-10 flex justify-center">
+          <div className="flex-1 h-full max-w-[1000px] px-4 mx-auto w-full py-10 flex justify-center">
             <div className="flex flex-col justify-center">
               <div>
                 <p className="text-[20px] font-bold text-white">
@@ -138,9 +138,6 @@ const ListLevel = ({ invert = false, logoUrl }) => {
                 ))}
               </div>
             </div>
-          </div>
-          <div className="h-[140px] border-t-[2px] border-[rgb(82,101,109)]">
-            {/* <ButtonRingle>Check</ButtonRingle> */}
           </div>
         </div>
       </Modal>

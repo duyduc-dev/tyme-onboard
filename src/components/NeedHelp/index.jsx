@@ -6,6 +6,7 @@ import { useChatHistoryStore } from "../../store/chatHistoryStore.ts";
 import { FaPaperPlane } from "react-icons/fa";
 import PuffLoader from "react-spinners/PuffLoader";
 import MarkdownEditor from "@uiw/react-markdown-editor";
+import { FaBrain, FaTimes } from "react-icons/fa";
 
 const NeedHelp = () => {
   const ref = useRef(null);
@@ -76,27 +77,38 @@ const NeedHelp = () => {
     <div
       ref={ref}
       className={clsx(
-        "fixed flex right-0 bottom-[20vh] cursor-pointer transition-all translate-x-[500px]",
-        isOpen && "!translate-x-0"
+        "sm:fixed flex right-0 bottom-[20vh] cursor-pointer transition-all sm:translate-x-[500px]",
+        isOpen && "sm:!translate-x-0"
       )}
     >
       <div
         onClick={() => setIsOpen((p) => !p)}
-        className=" hover:!bg-opacity-90 transition-all"
+        className="hover:!bg-opacity-90 transition-all sm:static fixed bottom-11 right-11"
       >
         <p
           style={{ writingMode: "vertical-lr" }}
-          className="rotate-180 px-2 py-4 bg-[#292c33] select-none rounded-r-[8px] text-white"
+          className="rotate-180 hidden sm:block px-2 py-4 bg-[#292c33] select-none rounded-r-[8px] text-white"
         >
           Need help!
+        </p>
+        <p className="bg-[#292c33] sm:hidden select-none text-white px-4 flex items-center gap-2 py-2 rounded-[24px]">
+          <FaBrain />
+          <span> Need help!</span>
         </p>
       </div>
       <div
         className={clsx(
-          "w-[500px] flex flex-col border border-grey-200 p-2 bg-white shadow-[rgba(149,157,165,0.2)_0px_8px_24px] rounded-bl-[8px] overflow-y-visible max-h-[500px] h-[500px]"
+          "sm:w-[500px] sm:static fixed inset-0 z-[999999] flex flex-col border border-grey-200 sm:p-2 bg-white shadow-[rgba(149,157,165,0.2)_0px_8px_24px] rounded-bl-[8px] overflow-y-visible sm:max-h-[500px] sm:h-[500px]",
+          !isOpen && "hidden sm:flex"
         )}
       >
-        <div className="flex-1 overflow-y-scroll pb-5 max-h-[calc(500px_-_80px)] px-1">
+        <div className="h-[70px] sm:hidden bg-[#262626] flex items-center p-4 text-white font-bold gap-2">
+          <div onClick={() => setIsOpen(false)}>
+            <FaTimes size={20} />
+          </div>
+          <div>TymeX Bot</div>
+        </div>
+        <div className="flex-1 overflow-y-scroll p-4 sm:p-0 pb-5 sm:max-h-[calc(500px_-_80px)] h-full sm:px-1">
           {messages.map((message, index) => {
             const isMe = message.user === "me";
             return (
@@ -137,7 +149,7 @@ const NeedHelp = () => {
           })}
           <div ref={refBottomElement}></div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 p-4 sm:p-0">
           <textarea
             disabled={loading}
             type="text"
